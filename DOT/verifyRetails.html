@@ -1,0 +1,757 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <!-- Generated: 2018-04-16 09:29:05 +0200 -->
+    <title>G2C</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
+    <script src="./assets/js/vendors/jquery-3.2.1.min.js"></script>
+    <script src="./assets/js/require.min.js"></script>
+    <script>
+      requirejs.config({
+          baseUrl: '.'
+      });
+    </script>
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Dashboard Core -->
+    <link href="./assets/css/dashboard.css" rel="stylesheet" />
+    <script src="./assets/js/dashboard.js"></script>
+    <!-- c3.js Charts Plugin -->
+    <link href="./assets/plugins/charts-c3/plugin.css" rel="stylesheet" />
+    <script src="./assets/plugins/charts-c3/plugin.js"></script>
+    <!-- Google Maps Plugin -->
+    <link href="./assets/plugins/maps-google/plugin.css" rel="stylesheet" />
+    <script src="./assets/plugins/maps-google/plugin.js"></script>
+    <!-- Input Mask Plugin -->
+    <script src="./assets/plugins/input-mask/plugin.js"></script>
+</head>
+<div class="header py-4" style="background: #120f65;">
+    <div class="container">
+      <div class="d-flex">
+        <a class="header-brand" href="./index.html">
+          <img src="./assets/images/logo.png" class="header-brand-img" alt="tabler logo" style="height:60px;width:60px">
+        </a>
+
+        <h3 class="text-white"><br />Government to citizen service delivery initiative</h3>
+        <div class="d-flex order-lg-2 ml-auto">
+                <div class="dropdown">
+                  <a href="#" class="nav-link pr-0 leading-none" data-toggle="dropdown">
+                    <span class="avatar" style="background-image: url(./assets/images/ip.jpeg)"></span>
+                    <span class="ml-2 d-none d-lg-block">
+                      <span class="text-muted">Tshewang Tenzin</span>
+                      <small class="text-muted d-block mt-1">Administrator</small>
+                    </span>
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
+                    <a class="dropdown-item" href="#">
+                      <i class="dropdown-icon fe fe-help-circle"></i> Need help?
+                    </a>
+                    <a class="dropdown-item" href="#">
+                      <i class="dropdown-icon fe fe-log-out"></i> Sign out
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <a href="#" class="header-toggler d-lg-none ml-3 ml-lg-0" data-toggle="collapse" data-target="#headerMenuCollapse">
+                <span class="header-toggler-icon"></span>
+              </a>
+      </div>
+    </div>
+  </div>
+ <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
+    <div class="container">
+      <div class="row pull-right">
+        <div class="col-lg order-lg-first">
+          <strong>
+          <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+            <li class="nav-item" >
+              <a href="./tasklist.html" class="nav-link active" style="color:black"><i class="fa fa-home"></i> Home</a>
+            </li>
+            <li class="nav-item" style="color:black">
+              <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fa fa-edit"></i> Create Application <i class="fa fa-chevron-down"></i></a>
+              <div class="dropdown-menu dropdown-menu-arrow">
+                <a href="./registrationOrMicroTradeCertificate.html" class="dropdown-item ">Micro Trade Registration Certificate</a>
+                <a href="./retailtrade.html" class="dropdown-item ">Application For Retail Trade License</a>
+                <a href="./wholesaletrade.html" class="dropdown-item ">Application For Wholesale Trade License</a>
+              </div>
+            </li>
+             <!-- <li class="nav-item" style="color:black">
+              <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fa fa-book"></i> Update License <i class="fa fa-chevron-down"></i></a>
+              <div class="dropdown-menu dropdown-menu-arrow">
+                <a href="#" class="dropdown-item ">Old Data Update</a>
+                <a href="#" class="dropdown-item ">Update Renewal Date</a>
+                <a href="#" class="dropdown-item ">Change Ownership type</a>
+              </div>
+            </li> -->
+            <li class="nav-item" >
+              <a href="./printpayment.html" class="nav-link" style="color:black"><i class="fe fe-printer"></i> Print Certificate/License</a>
+            </li>
+            <li class="nav-item" >
+              <a href="./tasklist.html" class="nav-link" style="color:black"><i class="fa fa-gears"></i> Activity Management</a>
+            </li>
+            <li class="nav-item" >
+              <a href="./tasklist.html" class="nav-link" style="color:black"><i class="fa fa-ban"></i> License Suspension</a>
+            </li>
+            <li class="nav-item ">
+              <a href="./trackApplication.html" class="nav-link" style="color:black"> <i class="fa fa-search"></i>Track Your Application</a>
+            </li>
+            <li class="nav-item" style="color:black">
+              <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fa fa-bar-chart"></i> Report <i class="fa fa-chevron-down"></i></a>
+              <div class="dropdown-menu dropdown-menu-arrow">
+                <a href="#" class="dropdown-item ">Micro Trade Registration</a>
+                <a href="#" class="dropdown-item ">Retail Trade Registration</a>
+                <a href="#" class="dropdown-item ">Wholesale Trade Registration</a>
+              </div>
+            </li>
+          </ul>
+          </strong>
+        </div>
+      </div>
+    </div>
+  </div>
+  <body class="">
+    <div class="my-3 my-md-5">
+      <div class="container">
+        <div class="row">
+          <span style="font-size: 20px"><b>&nbsp;&nbsp;&nbsp;&nbsp;Department of Trade</b> >> Retail Trade Verification </span> 
+          <div class="col-12">
+            <form action="#" method="post" class="card form-horizontal">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="panel panel-default" id="regform">
+                        <div class="panel-body"> 
+                          <div class="nav-tabs-custom">
+                            <ul class="nav nav-tabs">
+                              <li id="personalDetials">
+                                <a href="#personal_tab" id="personalh" data-toggle="tab" data-placement="top" title='Please use buttons to change tabs.'><i class="fa fa-user"></i>&nbsp;Personal Details<span class="text-info" style="font-size: 20px" id="personalcheck"></span></a>
+                              </li>
+                              <li id="locationhead">
+                                <a href="#locationcontent" id="locationh" data-toggle="tab" data-placement="top" title='Please use buttons to change tabs.'><i class="fa fa-globe"></i>&nbsp; Location & Business Establishment<span class="text-info" style="font-size: 20px" id="locationcheck"></span></a>
+                              </li>
+                              <li id="attachmenthead">
+                                <a href="#attachmentcontent" id="attachmenth" data-toggle="tab" data-placement="top" title='Please use buttons to change tabs.'><i class="fe fe-paperclip"></i>&nbsp;Attachments</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="tab-content">
+                            <div class="tab-pane" id="personal_tab">
+                              <br />
+                             <div id="personalDetails1" style="display: none">
+                              <div class="form-group">
+                                <label class="col-sm-2">Proposed Ownershiptype:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Sole Propritorship" readonly="true"class="form-control" name="name" id="name">
+                                </div>
+                                <label class="col-sm-2">Cid Number:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="11606003497" readonly="true"class="form-control" name="name" id="name">
+                                </div>
+                              </div>
+                               <div class="form-group">
+                                <label class="col-sm-2">Full Name:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Tshewang Tenzin" readonly="true"class="form-control" name="name" id="name">
+                                </div>
+                                <label class="col-sm-2">Gender:</label>
+                                <div class="col-sm-4">
+                                    <input type="radio" disabled="true" name="gender" id="gendermaleid" value="M"> &nbsp;&nbsp;&nbsp;Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <input type="radio" disabled="true" name="gender" id="genderfemale" value="F">&nbsp;&nbsp;&nbsp;Fe Male
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">Dzongkhag:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Trashiyangtse" readonly="true"class="form-control" name="dzongkhang" id="dzongkhang">
+                                </div>
+                                <label class="col-sm-2">Gewog:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Tongzhang" readonly="true"class="form-control" name="gewog" id="gewog">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">Village:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Wogkhar" readonly="true"class="form-control" name="village" id="village">
+                                </div>
+                                <label class="col-sm-2">Security Clearance:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="123456789102" readonly="true"class="form-control" name="sccNo" id="sccNo">
+                                   <span><a href="#">check for security clearance</a></span>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">Mobile Number:</label>
+                                <div class="col-sm-4">
+                                   <input type="number" class="form-control" readonly="true" value="17880455" name="mobile" id="mobile">
+                                </div>
+                                <label class="col-sm-2">Email:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" class="form-control" readonly="true" name="gender">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">Telephone Number:</label>
+                                <div class="col-sm-4">
+                                  <input type="number" class="form-control" readonly="true" name="name">
+                                </div>
+                              </div>
+                             </div>
+                              <div id="partner1" style="display:none;">
+                                <hr />
+                                <div class="form-group">
+                                  <label class="col-sm-2">Cid Number:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" value="11606003498" readonly="true" class="form-control" name="name" id="name">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                <label class="col-sm-2">Full Name:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Tshewang Tenzin" readonly="true"class="form-control" name="name" id="name">
+                                </div>
+                                <label class="col-sm-2">Gender:</label>
+                                <div class="col-sm-4">
+                                    <input type="radio" disabled="true" checked="true" name="gender" id="gendermale1" value="M"> &nbsp;&nbsp;&nbsp;Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <input type="radio" disabled="true" name="gender" id="genderfemale" value="F">&nbsp;&nbsp;&nbsp;Fe Male
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">Dzongkhag:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Trashiyangtse" readonly="true"class="form-control" name="dzongkhang" id="dzongkhang">
+                                </div>
+                                <label class="col-sm-2">Gewog:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Tongzhang" readonly="true"class="form-control" name="gewog" id="gewog">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">Village:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Wogkhar" readonly="true"class="form-control" name="village" id="village">
+                                </div>
+                                <label class="col-sm-2">Security Clearance:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="123456789102" readonly="true"class="form-control" name="sccNo" id="sccNo">
+                                   <span><a href="#">check for security clearance</a></span>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">Mobile Number:</label>
+                                <div class="col-sm-4">
+                                   <input type="number" value="17880455" readonly="true" class="form-control" name="mobile" id="mobile">
+                                </div>
+                                <label class="col-sm-2">Email:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" class="form-control" readonly="true" name="gender">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">Telephone Number:</label>
+                                <div class="col-sm-4">
+                                  <input type="number" class="form-control" readonly="true" name="name">
+                                </div>
+                              </div>
+                              </div>
+                              <div id="companydetails" style="display:none;">
+                                <div class="form-group">
+                                  <label class="col-sm-2">Comp Reg Number:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" readonly="true" value="123456789101112" name="dzongkhang" id="dzongkhang">
+                                  </div>
+                                  <label class="col-sm-2">Company Name:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" readonly="true" value="Company Name" name="gewog" id="gewog">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-sm-2">Company Type:</label>
+                                  <div class="col-sm-4">
+                                     <input type="radio" name="gender" id="gendermaless" value="M"> &nbsp;&nbsp;&nbsp;Government&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <input type="radio" name="gender" id="genderfemale" value="F">&nbsp;&nbsp;&nbsp;Coorporation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <input type="radio" name="gender" id="privatecomp" value="F">&nbsp;&nbsp;&nbsp;Private
+                                  </div>
+                                  <label class="col-sm-2">Mobile Number:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" value="1784455" readonly="true" name="gewog" id="gewog">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-sm-2">Email Id:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" readonly="true" name="gewog" id="gewog">
+                                  </div>
+                                  <label class="col-sm-2">Telepho No:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" name="gewog" readonly="otherdetails" id="gewog">
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="otherdetails" style="display:none;">
+                                <div class="form-group">
+                                  <label class="col-sm-2">Agency Name:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" readonly="true" value="AgencyName" name="dzongkhang" id="dzongkhang">
+                                  </div>
+                                  <label class="col-sm-2">Agency Address:</label>
+                                  <div class="col-sm-4">
+                                     <textarea class="form-control" readonly="true" name="agencyaddr">Address of the Agency</textarea>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-sm-2">Mobile No:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" readonly="true" value="12345678" name="gewog" id="gewog">
+                                  </div>
+                                  <label class="col-sm-2">Telephone Number:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" readonly="true" name="gewog" id="gewog">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-sm-2">Email Id:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" readonly="true" name="gewog" id="gewog">
+                                  </div>
+                                </div>
+                              </div>
+                              <hr />
+                              <div class="form-group">
+                                <div class="col-sm-4">
+                                <select name="dzongkhag" onchange="showfields(this.value)" id="dzongkhag" onchange="getgewog()" class="form-control">
+                                    <option value="1">Sole</option>
+                                    <option value="2">Partnership</option>
+                                    <option value="3">company</option>
+                                    <option value="4">Others</option>
+                                  </select>
+                                </div>
+                                <div class="col-sm-8">
+                                  <button type="button" onclick="next('personal')" class="btn btn-primary pull-right">
+                                    <i class="fa fa-arrow-right"></i>
+                                    Next
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="tab-pane" id="locationcontent">
+                              <br />
+                              <div class="form-group">
+                                <label class="col-sm-2">
+                                  Activities:<span class="text-danger">*</span>
+                                </label>
+                                <div class="col-sm-4">
+                                  <input type="text" class="form-control" readonly="true" value="Radio Communication Equipments" name="gewog" id="gewog"><br />
+                                  <input type="text" class="form-control" readonly="true" value="New Born Kids Wear" name="gewog" id="gewog">
+                                </div>
+                                <label class="col-sm-2">
+                                  Scale:<span class="text-danger">*</span>
+                                </label>
+                                <div class="col-sm-4">
+                                  <input type="radio" name="large" id="large" disabled="true"> &nbsp;&nbsp;&nbsp;Large&nbsp;&nbsp;
+                                  <input type="radio" name="large" id="medum" disabled="true"> &nbsp;&nbsp;&nbsp;Medium&nbsp;&nbsp;
+                                  <input type="radio" name="large" id="small" disabled="true"> &nbsp;&nbsp;&nbsp;Small
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">
+                                	Estb Name:
+                                </label>
+                                <div class="col-sm-4">
+                                  <input type="text" class="form-control" readonly="true" value="Establishent Name" id="sactivity" name="estbname" id="estbname">
+                                </div>
+                                <label class="col-sm-2">
+                                	Name of Area:
+                                </label>
+                                <div class="col-sm-4">
+                                  <input type="text" readonly="true" value="Name of area" class="form-control" name="location" id="location">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">
+                                	Dzongkhag:
+                                </label>
+                                <div class="col-sm-4">
+                                  <input type="text" readonly="true" value="Bumthang" class="form-control" name="location" id="location">
+                                </div>
+                                <label class="col-sm-2">
+                                	Gewog:
+                                </label>
+                                <div class="col-sm-4">
+                                  <input type="text" readonly="true" value="Chumey" class="form-control" name="location" id="location">
+                                </div>
+                              </div>
+
+                              <div class="form-group">
+                                <label class="col-sm-2">
+                                	Village:
+                                </label>
+                                <div class="col-sm-4">
+                                  <input type="text" readonly="true" value="Chumey" class="form-control" name="location" id="location">
+                                </div>
+                                <label class="col-sm-2">Street Name</label>
+                                <div class="col-sm-4">
+                                  <input type="text" readonly="true" value="Street Name" class="form-control" name="location" id="location">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                              	<div class="col-sm-6">
+                                	<label class="col-sm-8">Do you want your License through postal ?<span class="text-danger">*</span></label>
+	                                <div class="col-sm-4">
+	                                  	<input type="radio" disabled="true" onclick="showpostaladdr('Y')" name="postaladdr" id="postaladdry" value="Y"> &nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+	                               		<input type="radio" disabled="true" name="postaladdr" onclick="showpostaladdr('N')" id="postaladdrn" value="N">&nbsp;&nbsp;&nbsp;No
+	                                </div>
+                                </div>
+                              </div>
+                              <div class="form-group" id="postaladdid" >
+                                <label class="col-sm-12">
+                                	Postal Address<span class="text-danger">*</span>
+                                </label>
+                                <div class="col-sm-12">
+                                	<textarea name="postalAddr" readonly="true" id="postalAddr"class="form-control">
+                                   Addrss of postal 
+                                  </textarea>
+                                </div>
+                              </div>
+                              <hr />
+                              <div class="form-group">
+                                <div class="col-sm-3 pull-right">
+                            		<button type="button" onclick="pretab('location')" class="btn btn-success">
+                                    	<i class="fa fa-arrow-left"></i>
+                                    	Previous
+                                  	</button>
+                        			<button type="button" onclick="next('location')" class="btn btn-primary">
+                                    	<i class="fa fa-arrow-right"></i>
+                                    	Next
+                                  	</button>
+                                </div>
+                              </div>
+                          		</div>
+                              <div class="tab-pane" id="attachmentcontent">
+	                              <br />
+	                             <div class="form-group">
+                                  <div class="col-sm-12">
+                                    <div class="table-responsive">
+                                      <table class="table card-table table-vcenter">
+                                        <thead>
+                                          <tr>
+                                            <th width="10%">Sl No.</th>
+                                            <th width="70%">Attachment</th>
+                                            <th colspan="2" width="20%">Action</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td>1</td>
+                                            <td><b>Cid Copy</b></td>
+                                            <td><button class="btn btn-primary btn-sm" type="button">
+                                              <i class="fa fa-eye"></i>View
+                                            </button></td>
+                                            <td><button class="btn btn-success btn-sm" type="button">
+                                              <i class="fa fa-download"></i>Download
+                                            </button></td>
+                                          </tr>
+                                          <tr>
+                                            <td>2</td>
+                                            <td><b>Sector Clearance</b></td>
+                                            <td><button class="btn btn-primary btn-sm" type="button">
+                                              <i class="fa fa-eye"></i>View
+                                            </button></td>
+                                            <td><button class="btn btn-success btn-sm" type="button">
+                                              <i class="fa fa-download"></i>Download
+                                            </button></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                  <label class="col-sm-2">
+                                    Booklet Cost<span class="text-danger">*</span>
+                                  </label>
+                                  <div class="col-sm-4">
+                                    <input type="text" name="booklet" class="form-control" >
+                                  </div>
+                                  <label class="col-sm-2">
+                                    License Fees<span class="text-danger">*</span>
+                                  </label>
+                                  <div class="col-sm-4">
+                                    <input type="text" name="booklet" class="form-control" >
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <div class="col-sm-12">
+                                    <textarea class="form-control" name="remarks" id="remarks" placeholder="Your coments/remarks"></textarea>
+                                     <span id="remarkserr" class="text-danger"></span>
+                                  </div>
+                                </div>
+                                <hr />
+	                              <div class="form-group">
+	                                <div class="col-sm-6 pull-right">
+	                            		<button type="button" onclick="pretab('attachment')" class="btn btn-success">
+	                                    	<i class="fa fa-arrow-left"></i>
+	                                    	Previous
+	                                  	</button>
+                                      <a href="./acknowledgementapprove.html" class="btn btn-primary"><i class="fa fa-check"></i>
+                                        Approve</a>
+                                      <a href="./acknowledgementForward.html" class="btn btn-warning"><i class="fa fa-arrow-up"></i>
+                                        Forward to Director</a>
+                                      <a href="#" onclick="rejectApplication()" class="btn btn-danger" type="button"><i class="fa fa-ban"></i>
+                                        Reject</a>
+	                                </div>
+	                              </div>
+	                          </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer" style=" background: #1b1d29;">
+      <div class="container">
+        <div class="row align-items-center flex-row-reverse">
+          <div class="col-auto ml-lg-auto">
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <a href="./login.html" class="btn btn-outline-primary btn-sm">Login</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-auto mt-3 mt-lg-0 text-center">
+            Copyright © 2016 G2C Project Office | OFFICE OF THE PRIME MINISTER.
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+<script type="text/javascript">
+  $('#gendermaleid').prop("checked",true);
+  $('#gendermale1').prop("checked",true);
+  $('#privatecomp').prop("checked",true);
+  $('#large').prop("checked",true);
+  $('#postaladdry').prop("checked",true);
+  function rejectApplication(){
+    if($('#remarks').val()==""){
+      $('#remarkserr').html('Please mention reason for reject this application');
+    }
+    else{
+      window.location='./rejectAcknowledgementMicro.html';
+    }
+  }
+  $('#personalDetails1').show();
+  function showfields(val){
+    if(val=="1"){
+      $('#personalDetails1').show();
+      $('#partner1').hide();
+      $('#companydetails').hide();
+      $('#otherdetails').hide();
+    }
+    else if(val=="2"){
+      $('#personalDetails1').show();
+      $('#partner1').show();
+      $('#companydetails').hide();
+      $('#otherdetails').hide();
+    }
+    else if(val=="3"){
+      $('#companydetails').show();
+      $('#personalDetails1').hide();
+      $('#partner1').hide();
+      $('#otherdetails').hide();
+    }
+    else if(val=="4"){
+      $('#otherdetails').show();
+      $('#companydetails').hide();
+      $('#personalDetails1').hide();
+      $('#partner1').hide();
+    }
+  }
+  
+  $('#personalDetials').prop('class', 'active');
+  $('#personalDetials').not('.active').addClass('disabled');
+  $('#personal_tab').prop('class', 'tab-pane active');
+  $("#personalh").css("color","white");
+  $("#personalh").css("background-color","rgb(18, 18, 19)");
+
+  $('#locationhead').not('.active').addClass('disabled');
+  $('#locationhead').not('.active').find('a').removeAttr("data-toggle");
+
+  $('#attachmenthead').not('.active').addClass('disabled');
+  $('#attachmenthead').not('.active').find('a').removeAttr("data-toggle");    
+  
+  
+  $('#mobile').click(function(){
+    $('#mobileerr').html('');
+  });
+  function next(val){
+    if(val=="personal" && validatePersonal()){
+      $('#locationcontent').prop('class', 'tab-pane active');
+      $('#personalDetials').removeClass("active");
+      $('#personal_tab').removeClass("active");
+      $("#personalh").css("color","white");
+      $('#personalcheck').html('<i class="fa fa-check text-white"></i>');
+      $("#personalh").css("background-color","#120f65");
+      $("#locationh").css("background-color","rgb(18, 18, 19)");
+      $("#locationh").css("color","white");
+    }
+    else if(val=="location" && validatelocation()){
+	  $('#attachmentcontent').prop('class', 'tab-pane active');
+      $('#locationhead').removeClass("active");
+      $('#locationcontent').removeClass("active");
+      $('#locationcheck').html('<i class="fa fa-check text-white"></i>');
+      $("#personalh").css("color","white");
+      $("#personalh").css("background-color","#120f65");
+      $("#locationh").css("background-color","#120f65");
+      $("#attachmenthead").css("background-color","rgb(18, 18, 19)");
+      $("#attachmenth").css("color","white");
+    }
+  }
+  function pretab(val){
+    if(val=="location"){
+      $('#personal_tab').prop('class', 'tab-pane active');
+        $('#locationhead').removeClass("active");
+        $('#locationcontent').removeClass("active");
+        $("#personalh").css("background-color","rgb(18, 18, 19)");
+        $("#locationh").css("background-color","#120f65");
+    }
+    else if("attachment"==val){
+      $('#locationcontent').prop('class', 'tab-pane active');
+        $('#attachmenthead').removeClass("active");
+        $('#attachmentcontent').removeClass("active");
+        $("#locationh").css("background-color","rgb(18, 18, 19)");
+        $("#attachmenthead").css("background-color","#120f65");
+        $("#attachmenth").css("color","white");
+    }
+  }
+  function validatelocation(){
+  	var retval=true;
+ 	if($('#products').val()==""){
+      $('#productserr').html('Please select products');
+      retval=false;
+    }
+     if($('#principalcompany').val()==""){
+      $('#principalcompanyerr').html('Please provide principal company');
+      retval=false;
+    }
+    if($('#estbname').val()==""){
+      $('#estbnameerr').html('Please provide business establishment name');
+      retval=false;
+    }
+    if($('#location').val()==""){
+      $('#locationerr').html('Please mention your exact location of business setup');
+      retval=false;
+    }
+    if($('#dzongkhag').val()==""){
+      $('#dzongkhagerr').html('Please select Dzongkhag of your business setup');
+      retval=false;
+    }
+    if($('#gewogsection').val()==""){
+      $('#gewogsectionerr').html('Please select Gewog of your business setup');
+      retval=false;
+    }
+    if($('#vilagesection').val()==""){
+      $('#vilagesectionerr').html('Please select Village of your business setup');
+      retval=false;
+    }
+    if($('#postaladdry').prop('checked')==false && $('#postaladdrn').prop('checked')==false){
+      $('#postalselecterr').html('Please choose how you wish to collect your certificate');
+      retval=false;
+    }
+    if($('#postaladdry').prop('checked')==true && $('#postalAddr').val()==""){
+      $('#postalAddrerr').html('Please mention your postal address from where you wish to collect certificate');
+      retval=false;
+    }
+    return retval;
+  }
+  $('#estbname').click(function(){
+    $('#estbnameerr').html('');
+  });
+  $('#principalcompany').click(function(){
+    $('#principalcompanyerr').html('');
+  });
+  $('#products').click(function(){
+    $('#productserr').html('');
+  });
+  $('#location').click(function(){
+    $('#locationerr').html('');
+  });
+  $('#dzongkhag').click(function(){
+    $('#dzongkhagerr').html('');
+  });
+  $('#gewogsection').click(function(){
+    $('#gewogsectionerr').html('');
+  });
+  $('#vilagesection').click(function(){
+    $('#vilagesectionerr').html('');
+  });
+  $('#postaladdry').click(function(){
+    $('#postalselecterr').html('');
+  });
+  $('#postaladdrn').click(function(){
+    $('#postalselecterr').html('');
+  });
+  $('#postalAddr').click(function(){
+    $('#postalAddrerr').html('');
+  });
+  function validatePersonal(){
+    var retval=true;
+    if($('#cidNo').val()==""){
+      $('#ciderr').html('CID is required');
+      retval=false;
+    }
+    if($('#mobile').val()==""){
+      $('#mobileerr').html('Mobile Number is required');
+      retval=false;
+    }
+    else if($('#mobile').val().length!="8"){
+      $('#mobileerr').html('Mobile Number should have 8 digit');
+      retval=false;
+    }
+    return retval;
+  }
+  function showpostaladdr(val){
+  	if(val=="Y"){
+  		$('#postaladdid').show();
+  	}
+  	else{
+  		$('#postaladdid').hide();
+  	}
+  }
+  
+  function getgewog(){
+  	$('#gewogsection').append("<option value='1'>Chokhor</option><option value='1'>Chumey</option><option value='1'>Chokhor</option><option value='1'>Tang</option><option value='1'>Ura</option><option value='1'>Sampheling/Bhalujora</option>");
+  }
+  function getvilage(){
+  	$('#vilagesection').append("<option value='1'>Chokhor</option><option value='1'>Chumey</option><option value='1'>Chokhor</option><option value='1'>Tang</option><option value='1'>Ura</option><option value='1'>Sampheling/Bhalujora</option>");
+  }
+  var inicount=0;
+  function addmoreattachemnts(){
+  	inicount++;
+  	$('#fileadd').append('<div class="form-group" id="addedfile'+inicount+'"><div class="col-sm-6"><input type="file"  name="file1"></div><div class="col-sm-6"><button class="btn btn-danger" type="button" onclick="deleteate('+inicount+')"><i class="fa fa-times">Delete</i></button></div></div>');
+  }
+  function deleteate(id){
+  	$('#addedfile'+id).remove();
+  }
+</script>
