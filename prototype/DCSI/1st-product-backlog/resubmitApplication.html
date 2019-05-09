@@ -1,0 +1,915 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <!-- Generated: 2018-04-16 09:29:05 +0200 -->
+    <title>G2C</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
+    <script src="./assets/js/vendors/jquery-3.2.1.min.js"></script>
+    <script src="./assets/js/require.min.js"></script>
+    <script>
+      requirejs.config({
+          baseUrl: '.'
+      });
+    </script>
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Dashboard Core -->
+    <link href="./assets/css/dashboard.css" rel="stylesheet" />
+    <script src="./assets/js/dashboard.js"></script>
+    <!-- c3.js Charts Plugin -->
+    <link href="./assets/plugins/charts-c3/plugin.css" rel="stylesheet" />
+    <script src="./assets/plugins/charts-c3/plugin.js"></script>
+    <!-- Google Maps Plugin -->
+    <link href="./assets/plugins/maps-google/plugin.css" rel="stylesheet" />
+    <script src="./assets/plugins/maps-google/plugin.js"></script>
+    <!-- Input Mask Plugin -->
+    <script src="./assets/plugins/input-mask/plugin.js"></script>
+</head>
+
+  <div class="header py-4" style="background: #120f65;">
+    <div class="container">
+      <div class="d-flex">
+        <a class="header-brand" href="./index.html">
+          <img src="./assets/images/logo.png" class="header-brand-img" alt="tabler logo" style="height:60px;width:60px">
+        </a>
+
+        <h3 class="text-white"><br />Government to citizen service delivery initiative</h3>
+      </div>
+    </div>
+  </div>
+ <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
+    <div class="container">
+      <div class="row pull-right">
+        <div class="col-lg order-lg-first">
+          <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+            <li class="nav-item" >
+              <a href="./tasklist.html" class="nav-link active" style="color:black"><i class="fa fa-home"></i> Home</a>
+            </li>
+            <li class="nav-item" style="color:black">
+              <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-edit"></i> Application <i class="fa fa-chevron-down"></i></a>
+              <div class="dropdown-menu dropdown-menu-arrow">
+                <a href="./IssuanceOfLicense.html" class="dropdown-item ">Application for cottage and small scale license</a>
+                <a href="./Renewaloflicense.html" class="dropdown-item ">Application for renewal of cottage and small scale license</a>
+                <a href="./cancellationoflicense.html" class="dropdown-item ">Application for cancellation of cottage and small scale license</a>
+              </div>
+              <a href="./resubmitApplication.html" class="dropdown-item ">Resubmit Application</a>
+            </li>
+            <li class="nav-item" >
+              <a href="./printpayment.html" class="nav-link" style="color:black"><i class="fe fe-printer"></i> Print License</a>
+            </li>
+            <li class="nav-item ">
+              <a href="./trackApplication.html" class="nav-link" style="color:black"> <i class="fa fa-search"></i>Track Your Application</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <body class="">
+    <div class="my-3 my-md-5">
+      <div class="container">
+        <div class="row">
+          <span style="font-size: 20px"><b>&nbsp;&nbsp;&nbsp;&nbsp;Department of cottage and small scale industry</b> >>Resubmit Application </span> 
+          <div class="col-12">
+            <form action="#" method="post" class="card form-horizontal">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="panel panel-default" id="ownershipselect">
+                      <div class="panel-body"> 
+                        <div class="form-group">
+                            <label class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+                              Enter Application Number:
+                            </label>
+                        </div>
+                         <div class="form-group">
+                            <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                               <input type="text" placeholder="Application Number" name="appNo" id="appNo" class="form-control">
+                               <span id="appNoerr" class="text-danger"></span>
+                            </div>
+                        </div>
+                        <span id="addpartners"></span>
+                        <div class="form-group">
+                          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                            <hr />
+                            <button type="button" onclick="showformDetials()" class="btn btn-primary"><i class="fa fa-arrow-down"></i> Get Details</button>
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                    <div class="panel panel-default" id="regform" style="display:none">
+                        <div class="panel-body"> 
+                           <div class="form-group">
+                              <label class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-danger">
+                                Reason for rejecting your application: Reasons from verifiers
+                              </label>
+                              <br />
+                              <div class="col-sm-4">
+                                <select name="dzongkhag" onchange="showfields(this.value)" id="dzongkhag" onchange="getgewog()" class="form-control">
+                                    <option value="1">Sole</option>
+                                    <option value="2">Partnership</option>
+                                    <option value="3">company</option>
+                                    <option value="4">Others</option>
+                                  </select>
+                                </div>
+                          </div>
+                          <div class="nav-tabs-custom">
+                            <ul class="nav nav-tabs">
+                              <li id="personalDetials">
+                                <a href="#personal_tab" id="personalh" data-toggle="tab" data-placement="top" title='Please use buttons to change tabs.'><i class="fa fa-user"></i>&nbsp;Personal Details<span class="text-info" style="font-size: 20px" id="personalcheck"></span></a>
+                              </li>
+                              <li id="locationhead">
+                                <a href="#locationcontent" id="locationh" data-toggle="tab" data-placement="top" title='Please use buttons to change tabs.'><i class="fa fa-globe"></i>&nbsp; Location & Business Establishment<span class="text-info" style="font-size: 20px" id="locationcheck"></span></a>
+                              </li>
+                              <li id="attachmenthead">
+                                <a href="#attachmentcontent" id="attachmenth" data-toggle="tab" data-placement="top" title='Please use buttons to change tabs.'><i class="fe fe-paperclip"></i>&nbsp;Attachments</a>
+                              </li>
+                            </ul>
+                          </div>
+                          <div class="tab-content">
+                            <div class="tab-pane" id="personal_tab">
+                              <br />
+                             <div id="personalDetails1" style="display: none">
+                              <div class="form-group">
+                                <label class="col-sm-2">Proposed Ownershiptype:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Sole Propritorship" readonly="true"class="form-control" name="name" id="name">
+                                </div>
+                                <label class="col-sm-2">Cid Number:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="11606003497" readonly="true"class="form-control" name="name" id="name">
+                                </div>
+                              </div>
+                               <div class="form-group">
+                                <label class="col-sm-2">Full Name:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Tshewang Tenzin" readonly="true"class="form-control" name="name" id="name">
+                                </div>
+                                <label class="col-sm-2">Gender:</label>
+                                <div class="col-sm-4">
+                                    <input type="radio" disabled="true" name="gender" id="gendermaleid" value="M"> &nbsp;&nbsp;&nbsp;Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <input type="radio" disabled="true" name="gender" id="genderfemale" value="F">&nbsp;&nbsp;&nbsp;Fe Male
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">Dzongkhag:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Trashiyangtse" readonly="true"class="form-control" name="dzongkhang" id="dzongkhang">
+                                </div>
+                                <label class="col-sm-2">Gewog:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Tongzhang" readonly="true"class="form-control" name="gewog" id="gewog">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">Village:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Wogkhar" readonly="true"class="form-control" name="village" id="village">
+                                </div>
+                                <label class="col-sm-2">Security Clearance:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="123456789102" class="form-control" name="sccNo" id="sccNo">
+                                   <span><a href="#">check for security clearance</a></span>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">Mobile Number:</label>
+                                <div class="col-sm-4">
+                                   <input type="number" class="form-control" value="17880455" name="mobile" id="mobile">
+                                </div>
+                                <label class="col-sm-2">Email:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" class="form-control"  name="gender">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">Telephone Number:</label>
+                                <div class="col-sm-4">
+                                  <input type="number" class="form-control" name="name">
+                                </div>
+                              </div>
+                             </div>
+                              <div id="partner1" style="display:none;">
+                                <hr />
+                                <div class="form-group">
+                                  <label class="col-sm-2">Cid Number:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" value="11606003498" readonly="true" class="form-control" name="name" id="name">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                <label class="col-sm-2">Full Name:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Tshewang Tenzin" readonly="true"class="form-control" name="name" id="name">
+                                </div>
+                                <label class="col-sm-2">Gender:</label>
+                                <div class="col-sm-4">
+                                    <input type="radio" disabled="true" checked="true" name="gender" id="gendermale1" value="M"> &nbsp;&nbsp;&nbsp;Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <input type="radio" disabled="true" name="gender" id="genderfemale" value="F">&nbsp;&nbsp;&nbsp;Fe Male
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">Dzongkhag:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Trashiyangtse" readonly="true"class="form-control" name="dzongkhang" id="dzongkhang">
+                                </div>
+                                <label class="col-sm-2">Gewog:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Tongzhang" readonly="true"class="form-control" name="gewog" id="gewog">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">Village:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="Wogkhar" readonly="true"class="form-control" name="village" id="village">
+                                </div>
+                                <label class="col-sm-2">Security Clearance:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" value="123456789102" class="form-control" name="sccNo" id="sccNo">
+                                   <span><a href="#">check for security clearance</a></span>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">Mobile Number:</label>
+                                <div class="col-sm-4">
+                                   <input type="number" value="17880455"  class="form-control" name="mobile" id="mobile">
+                                </div>
+                                <label class="col-sm-2">Email:</label>
+                                <div class="col-sm-4">
+                                   <input type="text" class="form-control"  name="gender">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">Telephone Number:</label>
+                                <div class="col-sm-4">
+                                  <input type="number" class="form-control" name="name">
+                                </div>
+                              </div>
+                              </div>
+                              <div id="companydetails" style="display:none;">
+                                <div class="form-group">
+                                  <label class="col-sm-2">Comp Reg Number:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" value="123456789101112" name="dzongkhang" id="dzongkhang">
+                                  </div>
+                                  <label class="col-sm-2">Company Name:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" value="Company Name" name="gewog" id="gewog">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-sm-2">Company Type:</label>
+                                  <div class="col-sm-4">
+                                     <input type="radio" name="gender" id="gendermaless" value="M"> &nbsp;&nbsp;&nbsp;Government&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <input type="radio" name="gender" id="genderfemale" value="F">&nbsp;&nbsp;&nbsp;Coorporation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <input type="radio" name="gender" id="privatecomp" value="F">&nbsp;&nbsp;&nbsp;Private
+                                  </div>
+                                  <label class="col-sm-2">Mobile Number:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" value="1784455" name="gewog" id="gewog">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-sm-2">Email Id:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" name="gewog" id="gewog">
+                                  </div>
+                                  <label class="col-sm-2">Telepho No:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" name="gewog"  id="gewog">
+                                  </div>
+                                </div>
+                              </div>
+                              <div id="otherdetails" style="display:none;">
+                                <div class="form-group">
+                                  <label class="col-sm-2">Agency Name:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" value="AgencyName" name="dzongkhang" id="dzongkhang">
+                                  </div>
+                                  <label class="col-sm-2">Agency Address:</label>
+                                  <div class="col-sm-4">
+                                     <textarea class="form-control" name="agencyaddr">Address of the Agency</textarea>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-sm-2">Mobile No:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" value="12345678" name="gewog" id="gewog">
+                                  </div>
+                                  <label class="col-sm-2">Telephone Number:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" name="gewog" id="gewog">
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <label class="col-sm-2">Email Id:</label>
+                                  <div class="col-sm-4">
+                                     <input type="text" class="form-control" name="gewog" id="gewog">
+                                  </div>
+                                </div>
+                              </div>
+                              <hr />
+                              <div class="form-group">
+                                <div class="col-sm-8">
+                                  <button type="button" onclick="next('personal')" class="btn btn-primary">
+                                    <i class="fa fa-arrow-right"></i>
+                                    Next
+                                  </button>
+                                </div>
+                              </div>
+                            </div>
+
+                            <div class="tab-pane" id="locationcontent">
+                              <br />
+                              <h4><u>Activity and Business details</u></h4><br />
+                              <div class="form-group">
+                                <label class="col-sm-2">Activity:<span class="text-danger">*</span>
+                                  <a href="#"  data-toggle="tooltip" data-placement="top" title='Activity your business will operate.' class="tooltipCSSSelector">
+                                      <img src="./assets/images/questionMark.jpg" class="user-image" id="instrumentCountryimg" width="20px">
+                                    </a>
+                                </label>
+                                <div class="col-sm-4">
+                                  <select class="form-control" id="addedactifity" onchange="showattachemtns(this.value)">
+                                    <option value="1">Advertisement and marketing services</option>
+                                    <option value="2">Agriculture Farming</option>
+                                    <option value="c">Contract</option>
+                                    <option value="3">Assembling of computers</option>
+                                  </select>
+                                  <span id="addactivity"></span>
+                                </div>
+                                <script type="text/javascript">
+                                  function showattachemtns(val){
+                                    $('#attsection').show();
+                                    $('#attsection1').show();
+                                    $('#attachthedocument').html('1). Clearance from the Bhutan Olympic Committee.<br />2). Location clearance from Dzongkhag/Thromde.<br />3). Security clearance.');
+                                    $('#attachthedocument1').html('1). Clearance from the Bhutan Olympic Committee.<br />2). Location clearance from Dzongkhag/Thromde.<br />3). Security clearance.');
+                                    if(val=='c'){
+                                      $('#contractrequired').show();
+                                    }
+                                  }
+                                  var inipartnercountcon=1;
+                                  function addmrtecontract(){
+                                    $('#addmorecontract').append('<div class="form-group" id="addedpartner'+inipartnercountcon+'"><div class="col-sm-2"></div><label class="col-sm-2">Choose category:<span class="text-danger">*</span></label><div class="col-sm-4"><input type="radio" name="contract" id="large" value="M"> &nbsp;&nbsp;&nbsp;W1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="contract" id="Medium" value="F">&nbsp;&nbsp;&nbsp;W2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="contract" id="small" value="F">&nbsp;&nbsp;&nbsp;W3&nbsp;&nbsp;&nbsp;W2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <input type="radio" name="contract" id="small" value="F">&nbsp;&nbsp;&nbsp;W4</div><div class="col-sm-2"><select class="form-control" id="addedactifity"><option value="">Select</option><option value="s">Small</option> <option value="s">Medium</option></select></div></div>');
+                                  }
+                                  function showScale(value){
+                                    if(value >= 1000000 && value <= 10000000){
+                                      $('#small').prop("checked", "true");
+                                      $('#hiddenScale').val("S");
+                                    }
+                                    else if(value < 1000000){
+                                      $('#cottage').prop("checked", "true");
+                                      $('#hiddenScale').val("C");
+                                    }
+                                  }
+                                </script>
+                                <label class="col-sm-2">Activity Details:<span class="text-danger">*</span>
+                                  <a href="#"  data-toggle="tooltip" data-placement="top" title='Briefly describe/mention the activity. this will be printed in final license' class="tooltipCSSSelector">
+                                      <img src="./assets/images/questionMark.jpg" class="user-image" id="instrumentCountryimg" width="20px">
+                                    </a>
+                                </label>
+                                <div class="col-sm-4">
+                                  <textarea name="activitydetials" value="ActivityDetails" id="activitydetials"class="form-control">Detail of the activity</textarea>
+                                  <span id="activitydetials"></span>
+                                </div>
+                              </div>
+                              <div class="form-group" id="attsection" style="display: none">
+                                  <label class="col-sm-2">
+                                    Required Documents with this activity:<span class="text-danger">*</span>
+                                  </label>
+                                  <div class="col-sm-4">
+                                    <span id="attachthedocument"></span>
+                                  </div> 
+                              </div>
+                              
+                              <div class="form-group" id="contractrequired" style="display: none">
+                                    <div class="col-sm-2"></div>
+                                    <label class="col-sm-2">
+                                      Choose category:<span class="text-danger">*</span>
+                                    </label>
+                                    <div class="col-sm-4">
+                                      <input type="radio" name="contract" checked="true" id="large" value="M"> &nbsp;&nbsp;&nbsp;W1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      <input type="radio" name="contract" id="Medium" value="F">&nbsp;&nbsp;&nbsp;W2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      <input type="radio" name="contract" id="small" value="F">&nbsp;&nbsp;&nbsp;W3&nbsp;&nbsp;&nbsp;W2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      <input type="radio" name="contract" id="small" value="F">&nbsp;&nbsp;&nbsp;W4
+                                    </div>
+                                    <div class="col-sm-2">
+                                      <select class="form-control" id="addedactifity">
+                                        <option value="s">Small</option>
+                                        <option value="s">Medium</option>
+                                        <option value="s">Large</option>
+                                      </select>
+                                    </div>
+                                    <div class="col-sm-2">
+                                      <button class="btn btn-primary" type="button" onclick="addmrtecontract()">
+                                          Add More
+                                        </button>
+                                    </div>
+                              </div>
+                              <span id="addmorecontract"></span>
+
+                              <div class="form-group">
+                                <label class="col-sm-2">
+                                  Estb Name:<span class="text-danger">*</span>
+                                  <a href="#"  data-toggle="tooltip" data-placement="top" title='Your Business Establishment Name.' class="tooltipCSSSelector">
+                                      <img src="./assets/images/questionMark.jpg" class="user-image" id="instrumentCountryimg" width="20px">
+                                    </a>
+                                </label>
+                                <div class="col-sm-4">
+                                  <input type="text" class="form-control" value="Establishment Name" name="estbname" id="estbname">
+                                  <span id="estbnameerr" class="text-danger"></span>
+                                </div>
+                                <label class="col-sm-2">
+                                  Name of Area:<span class="text-danger">*</span>
+                                  <a href="#"  data-toggle="tooltip" data-placement="top" title='Exact location of your business establishment.' class="tooltipCSSSelector">
+                                      <img src="./assets/images/questionMark.jpg" class="user-image" id="instrumentCountryimg" width="20px">
+                                    </a>
+                                </label>
+                                <div class="col-sm-4">
+                                  <input type="text" class="form-control" value="Exact Location" name="location" id="location">
+                                  <span id="locationerr" class="text-danger"></span>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">
+                                  Male Employees:<span class="text-danger">*</span>
+                                </label>
+                                <div class="col-sm-4">
+                                  <input type="text" class="form-control" value="1" name="estbname" id="estbname">
+                                  <span id="estbnameerr" class="text-danger"></span>
+                                </div>
+                                <label class="col-sm-2">
+                                  Female Employees:<span class="text-danger">*</span>
+                                </label>
+                                <div class="col-sm-4">
+                                  <input type="text" value="2" class="form-control" name="location" id="location">
+                                  <span id="locationerr" class="text-danger"></span>
+                                </div>
+                              </div>
+                              <hr />
+                              <h4><u>Location details</u></h4><br />
+                              <div class="form-group">
+                                <label class="col-sm-2">
+                                  Dzongkhag:<span class="text-danger">*</span>
+                                  <a href="#"  data-toggle="tooltip" data-placement="top" title='Dzongkhag of your proposed business establishment.' class="tooltipCSSSelector">
+                                      <img src="./assets/images/questionMark.jpg" class="user-image" id="instrumentCountryimg" width="20px">
+                                    </a>
+                                </label>
+                                <div class="col-sm-4">
+                                  <select name="dzongkhag" id="dzongkhag" onchange="getgewog()" class="form-control">
+                                    <option value="1">Bumthang</option>
+                                    <option value="2">Chukha</option>
+                                    <option value="3">Dagana</option>
+                                    <option value="4">Gasa</option>
+                                    <option value="5">Haa</option>
+                                    <option value="6">Lhuentse</option>
+                                    <option value="7">Mongar</option>
+                                    <option value="8">Paro</option>
+                                    <option value="9">Pemagatshel</option>
+                                    <option value="10">Punakha</option>
+                                    <option value="11">Samdrupjongkhar</option>
+                                    <option value="12">Samtse</option>
+                                    <option value="13">Thimphu</option>
+                                    <option value="14">Trashigang</option>
+                                    <option value="15">Trashiyangtse</option>
+                                    <option value="16">Trongsa</option>
+                                    <option value="17">Tsirang</option>
+                                    <option value="18">Wangdue Phodrang</option>
+                                    <option value="19">Zhemgang</option>
+                                  </select>
+                                  <span id="dzongkhagerr" class="text-danger"></span>
+                                </div>
+                                <label class="col-sm-2">
+                                  Gewog:<span class="text-danger">*</span>
+                                  <a href="#"  data-toggle="tooltip" data-placement="top" title='Gewog of your proposed business establishment.' class="tooltipCSSSelector">
+                                      <img src="./assets/images/questionMark.jpg" class="user-image" id="instrumentCountryimg" width="20px">
+                                    </a>
+                                </label>
+                                <div class="col-sm-4">
+                                  <select name="gewogsection" id="gewogsection" onchange="getvilage()" class="form-control">
+                                    <option value="">chumay</option>
+                                  </select>
+                                  <span id="gewogsectionerr" class="text-danger"></span>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">
+                                  Village:<span class="text-danger">*</span>
+                                  <a href="#"  data-toggle="tooltip" data-placement="top" title='Village of your proposed business establishment.' class="tooltipCSSSelector">
+                                      <img src="./assets/images/questionMark.jpg" class="user-image" id="instrumentCountryimg" width="20px">
+                                    </a>
+                                </label>
+                                <div class="col-sm-4">
+                                  <select name="vilagesection" id="vilagesection" class="form-control">
+                                    <option value="">chumay</option>
+                                  </select>
+                                  <span id="vilagesectionerr" class="text-danger"></span>
+                                </div>
+                                 <label class="col-sm-2">Street Name</label>
+                                <div class="col-sm-4">
+                                  <input type="text" name="streetname" value="Street" class="form-control">
+                                </div>
+                              </div>
+                              <h4><u>Investment and other details</u></h4><br />
+                              <div class="form-group">
+                                <label class="col-sm-2">
+                                  Total Capital Investment (Land, Other assets):<span class="text-danger">*</span>
+                                  <a href="#"  data-toggle="tooltip" data-placement="top" title='Includes overall business establishment cost. mention in figure' class="tooltipCSSSelector">
+                                      <img src="./assets/images/questionMark.jpg" class="user-image" id="instrumentCountryimg" width="20px">
+                                    </a>
+                                </label>
+                                <div class="col-sm-4">
+                                  <input type="number" value="200000" onchange="showScale(this.value)" class="form-control" name="estbname" id="estbname">
+                                  <span id="estbnameerr" class="text-danger"></span>
+                                </div>
+                                <label class="col-sm-2">
+                                  Proposed Scale:<span class="text-danger">*</span>
+                                  <a href="#"  data-toggle="tooltip" data-placement="top" title='Your scale will be cottage if total investment is less then 1000000 and small of its between 1000000 and 10000000.' class="tooltipCSSSelector">
+                                      <img src="./assets/images/questionMark.jpg" class="user-image" id="instrumentCountryimg" width="20px">
+                                    </a>
+                                </label>
+                                <div class="col-sm-4">
+                                  <input type="radio" name="scale" id="cottage" checked="true" value="C">&nbsp;&nbsp;&nbsp;Cottage&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                  <input type="radio" name="scale" id="small" value="S">&nbsp;&nbsp;&nbsp;Small
+                                  <span id="scaleerr" class="text-danger"></span>
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">
+                                  Working Capital: </label>
+                                <div class="col-sm-4">
+                                  <input type="text" name="streetname" class="form-control">
+                                </div>
+                                 <label class="col-sm-2">Promoter's Equity</label>
+                                <div class="col-sm-4">
+                                  <input type="text" value="2000" name="streetname" class="form-control">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <label class="col-sm-2">
+                                  Loan: </label>
+                                <div class="col-sm-4">
+                                  <input type="text" value="300000" name="streetname" class="form-control">
+                                </div>
+                              </div>
+                              <div class="form-group">
+                                <div class="col-sm-6">
+                                  <label class="col-sm-8">Do you want your License through postal ?<span class="text-danger">*</span></label>
+                                  <div class="col-sm-4">
+                                      <input type="radio" onclick="showpostaladdr('Y')" name="postaladdr" checked="true" id="postaladdry" value="Y"> &nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <input type="radio" name="postaladdr" onclick="showpostaladdr('N')" id="postaladdrn" value="N">&nbsp;&nbsp;&nbsp;No
+                                  </div>
+                                  <div class="col-sm-12">
+                                    <span id="postalselecterr" class="text-danger"></span>
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form-group" id="postaladdid">
+                                <label class="col-sm-12">
+                                  Postal Address<span class="text-danger">*</span>
+                                </label>
+                                <div class="col-sm-12">
+                                  <textarea name="postalAddr" id="postalAddr"class="form-control">Postal Address</textarea>
+                                  <span id="postalAddrerr" class="text-danger"></span>
+                                </div>
+                              </div>
+                              <hr />
+                              <div class="form-group">
+                                <div class="col-sm-3">
+                            		<button type="button" onclick="pretab('location')" class="btn btn-success">
+                                    	<i class="fa fa-arrow-left"></i>
+                                    	Previous
+                                  	</button>
+                        			<button type="button" onclick="next('location')" class="btn btn-primary">
+                                    	<i class="fa fa-arrow-right"></i>
+                                    	Next
+                                  	</button>
+                                </div>
+                              </div>
+                          		</div>
+                              <div class="tab-pane" id="attachmentcontent">
+	                              <br />
+	                             <div class="form-group">
+                                  <div class="col-sm-12">
+                                    <div class="table-responsive">
+                                      <table class="table card-table table-vcenter">
+                                        <thead>
+                                          <tr>
+                                            <th width="10%">Sl No.</th>
+                                            <th width="70%">Attachment</th>
+                                            <th colspan="2" width="20%">Action</th>
+                                          </tr>
+                                        </thead>
+                                        <tbody>
+                                          <tr>
+                                            <td>1</td>
+                                            <td><b>Cid Copy</b></td>
+                                            <td><button class="btn btn-primary btn-sm" type="button">
+                                              <i class="fa fa-eye"></i>View
+                                            </button></td>
+                                            <td><button class="btn btn-success btn-sm" type="button">
+                                              <i class="fa fa-download"></i>Download
+                                            </button></td>
+                                          </tr>
+                                          <tr>
+                                            <td>2</td>
+                                            <td><b>Sector Clearance</b></td>
+                                            <td><button class="btn btn-primary btn-sm" type="button">
+                                              <i class="fa fa-eye"></i>View
+                                            </button></td>
+                                            <td><button class="btn btn-success btn-sm" type="button">
+                                              <i class="fa fa-download"></i>Download
+                                            </button></td>
+                                          </tr>
+                                        </tbody>
+                                      </table>
+                                    </div>
+                                  </div>
+                                </div>
+                                <br />
+                                <div class="form-group">
+                                  <label class="col-sm-6">
+                                    Please attach following files:
+                                  </label>
+                                  <div class="col-sm-6">
+                                    <button class="btn btn-success pull-right" type="button" onclick="addmoreattachemnts()"><i class="fa fa-plus"> Add More Documents</i></button>
+                                  </div>
+                                </div>
+                                <div class="form-group">
+                                  <div class="col-sm-12">
+                                    <input type="file" name="file1">
+                                  </div>
+                                </div>
+                                <span id="fileadd"></span>
+                                <hr />
+	                              <div class="form-group">
+	                                <div class="col-sm-6">
+	                            		<button type="button" onclick="pretab('attachment')" class="btn btn-success">
+	                                    	<i class="fa fa-arrow-left"></i>
+	                                    	Previous
+	                                  	</button>
+                                      <a href="./acknowledgement.html" class="btn btn-primary"><i class="fa fa-check"></i>
+                                        Submit</a>
+	                                </div>
+	                              </div>
+	                          </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="footer" style=" background: #1b1d29;">
+      <div class="container">
+        <div class="row align-items-center flex-row-reverse">
+          <div class="col-auto ml-lg-auto">
+            <div class="row align-items-center">
+              <div class="col-auto">
+                <a href="./login.html" class="btn btn-outline-primary btn-sm">Login</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-auto mt-3 mt-lg-0 text-center">
+            Copyright © 2016 G2C Project Office | OFFICE OF THE PRIME MINISTER.
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+
+<script type="text/javascript">
+  function showformDetials(){
+    if($('#appNo').val()==""){
+      $('#appNoerr').html('Plese Provide you application number');
+    }
+    else{
+      $('#appNoerr').html('');
+      $('#regform').show();
+      $('#ownershipselect').hide();
+    }
+  }
+  $('#gendermaleid').prop("checked",true);
+  $('#gendermale1').prop("checked",true);
+  $('#privatecomp').prop("checked",true);
+  $('#large').prop("checked",true);
+  $('#postaladdry').prop("checked",true);
+  function rejectApplication(){
+    if($('#remarks').val()==""){
+      $('#remarkserr').html('Please mention reason for reject this application');
+    }
+    else{
+      window.location='./rejectAcknowledgementMicro.html';
+    }
+  }
+  $('#personalDetails1').show();
+  function showfields(val){
+    if(val=="1"){
+      $('#personalDetails1').show();
+      $('#partner1').hide();
+      $('#companydetails').hide();
+      $('#otherdetails').hide();
+    }
+    else if(val=="2"){
+      $('#personalDetails1').show();
+      $('#partner1').show();
+      $('#companydetails').hide();
+      $('#otherdetails').hide();
+    }
+    else if(val=="3"){
+      $('#companydetails').show();
+      $('#personalDetails1').hide();
+      $('#partner1').hide();
+      $('#otherdetails').hide();
+    }
+    else if(val=="4"){
+      $('#otherdetails').show();
+      $('#companydetails').hide();
+      $('#personalDetails1').hide();
+      $('#partner1').hide();
+    }
+  }
+  
+  $('#personalDetials').prop('class', 'active');
+  $('#personalDetials').not('.active').addClass('disabled');
+  $('#personal_tab').prop('class', 'tab-pane active');
+  $("#personalh").css("color","white");
+  $("#personalh").css("background-color","rgb(18, 18, 19)");
+
+  $('#locationhead').not('.active').addClass('disabled');
+  $('#locationhead').not('.active').find('a').removeAttr("data-toggle");
+
+  $('#attachmenthead').not('.active').addClass('disabled');
+  $('#attachmenthead').not('.active').find('a').removeAttr("data-toggle");    
+  
+  
+  $('#mobile').click(function(){
+    $('#mobileerr').html('');
+  });
+  function next(val){
+    if(val=="personal" ){
+      $('#locationcontent').prop('class', 'tab-pane active');
+      $('#personalDetials').removeClass("active");
+      $('#personal_tab').removeClass("active");
+      $("#personalh").css("color","white");
+      $('#personalcheck').html('<i class="fa fa-check text-white"></i>');
+      $("#personalh").css("background-color","#120f65");
+      $("#locationh").css("background-color","rgb(18, 18, 19)");
+      $("#locationh").css("color","white");
+    }
+    else if(val=="location"){
+	  $('#attachmentcontent').prop('class', 'tab-pane active');
+      $('#locationhead').removeClass("active");
+      $('#locationcontent').removeClass("active");
+      $('#locationcheck').html('<i class="fa fa-check text-white"></i>');
+      $("#personalh").css("color","white");
+      $("#personalh").css("background-color","#120f65");
+      $("#locationh").css("background-color","#120f65");
+      $("#attachmenthead").css("background-color","rgb(18, 18, 19)");
+      $("#attachmenth").css("color","white");
+    }
+  }
+  function pretab(val){
+    if(val=="location"){
+      $('#personal_tab').prop('class', 'tab-pane active');
+        $('#locationhead').removeClass("active");
+        $('#locationcontent').removeClass("active");
+        $("#personalh").css("background-color","rgb(18, 18, 19)");
+        $("#locationh").css("background-color","#120f65");
+    }
+    else if("attachment"==val){
+      $('#locationcontent').prop('class', 'tab-pane active');
+        $('#attachmenthead').removeClass("active");
+        $('#attachmentcontent').removeClass("active");
+        $("#locationh").css("background-color","rgb(18, 18, 19)");
+        $("#attachmenthead").css("background-color","#120f65");
+        $("#attachmenth").css("color","white");
+    }
+  }
+  function validatelocation(){
+  	var retval=true;
+ 	if($('#products').val()==""){
+      $('#productserr').html('Please select products');
+      retval=false;
+    }
+     if($('#principalcompany').val()==""){
+      $('#principalcompanyerr').html('Please provide principal company');
+      retval=false;
+    }
+    if($('#estbname').val()==""){
+      $('#estbnameerr').html('Please provide business establishment name');
+      retval=false;
+    }
+    if($('#location').val()==""){
+      $('#locationerr').html('Please mention your exact location of business setup');
+      retval=false;
+    }
+    if($('#dzongkhag').val()==""){
+      $('#dzongkhagerr').html('Please select Dzongkhag of your business setup');
+      retval=false;
+    }
+    if($('#gewogsection').val()==""){
+      $('#gewogsectionerr').html('Please select Gewog of your business setup');
+      retval=false;
+    }
+    if($('#vilagesection').val()==""){
+      $('#vilagesectionerr').html('Please select Village of your business setup');
+      retval=false;
+    }
+    if($('#postaladdry').prop('checked')==false && $('#postaladdrn').prop('checked')==false){
+      $('#postalselecterr').html('Please choose how you wish to collect your certificate');
+      retval=false;
+    }
+    if($('#postaladdry').prop('checked')==true && $('#postalAddr').val()==""){
+      $('#postalAddrerr').html('Please mention your postal address from where you wish to collect certificate');
+      retval=false;
+    }
+    return retval;
+  }
+  $('#estbname').click(function(){
+    $('#estbnameerr').html('');
+  });
+  $('#principalcompany').click(function(){
+    $('#principalcompanyerr').html('');
+  });
+  $('#products').click(function(){
+    $('#productserr').html('');
+  });
+  $('#location').click(function(){
+    $('#locationerr').html('');
+  });
+  $('#dzongkhag').click(function(){
+    $('#dzongkhagerr').html('');
+  });
+  $('#gewogsection').click(function(){
+    $('#gewogsectionerr').html('');
+  });
+  $('#vilagesection').click(function(){
+    $('#vilagesectionerr').html('');
+  });
+  $('#postaladdry').click(function(){
+    $('#postalselecterr').html('');
+  });
+  $('#postaladdrn').click(function(){
+    $('#postalselecterr').html('');
+  });
+  $('#postalAddr').click(function(){
+    $('#postalAddrerr').html('');
+  });
+  function validatePersonal(){
+    var retval=true;
+    if($('#cidNo').val()==""){
+      $('#ciderr').html('CID is required');
+      retval=false;
+    }
+    if($('#mobile').val()==""){
+      $('#mobileerr').html('Mobile Number is required');
+      retval=false;
+    }
+    else if($('#mobile').val().length!="8"){
+      $('#mobileerr').html('Mobile Number should have 8 digit');
+      retval=false;
+    }
+    return retval;
+  }
+  function showpostaladdr(val){
+  	if(val=="Y"){
+  		$('#postaladdid').show();
+  	}
+  	else{
+  		$('#postaladdid').hide();
+  	}
+  }
+  
+  function getgewog(){
+  	$('#gewogsection').append("<option value='1'>Chokhor</option><option value='1'>Chumey</option><option value='1'>Chokhor</option><option value='1'>Tang</option><option value='1'>Ura</option><option value='1'>Sampheling/Bhalujora</option>");
+  }
+  function getvilage(){
+  	$('#vilagesection').append("<option value='1'>Chokhor</option><option value='1'>Chumey</option><option value='1'>Chokhor</option><option value='1'>Tang</option><option value='1'>Ura</option><option value='1'>Sampheling/Bhalujora</option>");
+  }
+  var inicount=0;
+  function addmoreattachemnts(){
+  	inicount++;
+  	$('#fileadd').append('<div class="form-group" id="addedfile'+inicount+'"><div class="col-sm-6"><input type="file"  name="file1"></div><div class="col-sm-6"><button class="btn btn-danger" type="button" onclick="deleteate('+inicount+')"><i class="fa fa-times">Delete</i></button></div></div>');
+  }
+  function deleteate(id){
+  	$('#addedfile'+id).remove();
+  }
+</script>

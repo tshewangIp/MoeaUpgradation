@@ -1,0 +1,113 @@
+
+<link href="../assets/css/bootstrap.min.css" rel="stylesheet" />
+<style type="text/css">
+    a:hover,a:focus{
+    outline: none;
+    text-decoration: none;
+}
+.tab .nav-tabs{
+    border: none;
+    margin-bottom: 20px;
+}
+.tab .nav-tabs li a{
+    padding: 10px 20px;
+    margin-right: 10px;
+    font-size: 17px;
+    font-weight: 600;
+    color: #fcd0a1;
+    text-transform: uppercase;
+    background: #0f4c5c;
+    border: none;
+    border-radius: 0;
+    position: relative;
+    transition: all 0.3s ease 0s;
+}
+.tab .nav-tabs li a:before,
+.tab .nav-tabs li a:after{
+    content: "";
+    width: 20%;
+    height: 3px;
+    background: #0f4c5c;
+    position: absolute;
+    top: -5px;
+    left: 0;
+    transition: all 0.3s ease 0s;
+}
+.tab .nav-tabs li a:after{
+    top: auto;
+    left: auto;
+    bottom: -5px;
+    right: 0;
+}
+.tab .nav-tabs li a:hover:before,
+.tab .nav-tabs li a:hover:after,
+.tab .nav-tabs li.active a:before,
+.tab .nav-tabs li.active a:after{ width: 100%; }
+.tab .nav-tabs li a:hover,
+.tab .nav-tabs li.active a{
+    background: #9a031e;
+    color: #fcd0a1;
+    border: none;
+}
+.tab .tab-content{
+    padding: 30px;
+    background: #0f4c5c;
+    outline: 3px solid #fcd0a1;
+    outline-offset: -8px;
+    font-size: 17px;
+    color: #fcd0a1;
+    line-height: 30px;
+    letter-spacing: 1px;
+    position: relative;
+}
+.tab .tab-content h3{
+    font-size: 24px;
+    margin-top: 0;
+}
+@media only screen and (max-width: 479px){
+    .tab .nav-tabs li{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 15px;
+    }
+}
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <div class="tab" role="tabpanel">
+                <!-- Nav tabs -->
+                <br />
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" class="active"><a href="#Section1" aria-controls="home" role="tab" data-toggle="tab">Section 1</a></li>
+                    <li role="presentation"><a href="#Section2" aria-controls="profile" role="tab" data-toggle="tab">Section 2</a></li>
+                    <li role="presentation"><a href="#Section3" aria-controls="messages" role="tab" data-toggle="tab">Section 3</a></li>
+                    <li role="presentation"><a href="#Section4" aria-controls="messages" role="tab" data-toggle="tab">Section 4</a></li>
+                </ul>
+                <!-- Tab panes -->
+                <div class="tab-content tabs">
+                    <div role="tabpanel" class="tab-pane fade in active" id="Section1">
+                        <h3>Section 1</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem. Nullam faucibus lorem at eros consectetur lobortis. Maecenas nec nibh congue, placerat sem id, rutrum velit. Phasellus porta enim at facilisis condimentum. Maecenas pharetra dolor vel elit tempor pellentesque sed sed eros. Aenean vitae mauris tincidunt, imperdiet orci semper, rhoncus ligula. Vivamus scelerisque.</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="Section2">
+                        <h3>Section 2</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem. Nullam faucibus lorem at eros consectetur lobortis. Maecenas nec nibh congue, placerat sem id, rutrum velit. Phasellus porta enim at facilisis condimentum. Maecenas pharetra dolor vel elit tempor pellentesque sed sed eros. Aenean vitae mauris tincidunt, imperdiet orci semper, rhoncus ligula. Vivamus scelerisque.</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="Section3">
+                        <h3>Section 3</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem. Nullam faucibus lorem at eros consectetur lobortis. Maecenas nec nibh congue, placerat sem id, rutrum velit. Phasellus porta enim at facilisis condimentum. Maecenas pharetra dolor vel elit tempor pellentesque sed sed eros. Aenean vitae mauris tincidunt, imperdiet orci semper, rhoncus ligula. Vivamus scelerisque.</p>
+                    </div>
+                    <div role="tabpanel" class="tab-pane fade" id="Section4">
+                        <h3>Section 4</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras nec urna aliquam, ornare eros vel, malesuada lorem. Nullam faucibus lorem at eros consectetur lobortis. Maecenas nec nibh congue, placerat sem id, rutrum velit. Phasellus porta enim at facilisis condimentum. Maecenas pharetra dolor vel elit tempor pellentesque sed sed eros. Aenean vitae mauris tincidunt, imperdiet orci semper, rhoncus ligula. Vivamus scelerisque.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
