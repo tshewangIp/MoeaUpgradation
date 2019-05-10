@@ -143,43 +143,6 @@
                                   </select>
                                 </div>
                             </div>
-                            <!-- <div id="selectownership">
-                              <div class="form-group" id="cidsection">
-                                <label class="col-sm-4">
-                                  Cid No:
-                                  <a href="#"  data-toggle="tooltip" data-placement="top" title='Please provide 11 digit cid number.' class="tooltipCSSSelector">
-                                    <img src="./assets/images/questionMark.jpg" class="user-image" id="instrumentCountryimg" width="20px">
-                                    <i class='fa fa-spinner fa-spin'id="instrumentCountryspanid" style="display:none"></i>    
-                                  </a>
-                                  <span class="text-danger">*</span>
-                                </label>
-                                <div class="col-sm-4">
-                                    <input type="number" class="form-control" id="cidNo" name="cidNo" placeholder="Cid Number" />
-                                   <span id="ciderr" class="text-danger"></span>
-                                </div>
-                                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" id="partneradd" style="display: none">
-                                  <button class="btn btn-success pull-right" type="button" id="partneraddbtn"><i class="fa fa-plus"></i>Add More Partners</button>
-                                </div>
-                              </div>
-                              <span id="addpartners"></span>
-                              <div class="form-group" style="display: none" id="companysection">
-                                <label class="col-sm-4">Enter Company's Registration Number:
-                                  <a href="#"  data-toggle="tooltip" data-placement="top" title='Please enter your company registration number. You need get regsterted for you company if you dint registerted before' class="tooltipCSSSelector">
-                                    <img src="./assets/images/questionMark.jpg" class="user-image" id="instrumentCountryimg" width="20px">
-                                    <i class='fa fa-spinner fa-spin'id="instrumentCountryspanid" style="display:none"></i>    
-                                  </a><span class="text-danger">*</span>
-                                </label>
-                                <div class="col-sm-4">
-                                    <input type="number" class="form-control" onchange="fetchpersonalDetails(this.value)" id="compno" name="compno" placeholder="Company Reg. Number" />
-                                   <span id="compnoerr" class="text-danger"></span>
-                                </div>
-                              </div>
-                              <div class="form-group" style="display: none" id="proceedbtn">
-                                <div class="col-sm-4">
-                                  <button type="button" onclick="showform()" class="btn btn-primary" >Next <i class="fa fa-arrow-right"></i></button>
-                                </div>
-                              </div>
-                            </div> -->
                           </div> 
 
                           <div id="formdetals">
@@ -366,7 +329,7 @@
                                 </div>
                               </div>
                               <hr />
-                              <div class="form-group pull-right">
+                              <div class="form-group">
                                 <div class="col-sm-4">
                                   <button type="button" onclick="next('personal')" class="btn btn-primary">
                                     <i class="fa fa-arrow-right"></i>
@@ -397,16 +360,11 @@
               									  </div>
               									  <div class="form-group">
               										<label class="col-sm-2">Nature of Application:</label>
-              										<div class="col-sm-4">
-              										  <input type="radio" disabled="disabled" name="natire" id="newId" value="M"> &nbsp;&nbsp;&nbsp;New&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              										  <input type="radio" disabled="disabled" name="natire" id="expension" value="F">&nbsp;&nbsp;&nbsp;Expansion &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              										  <input type="radio" disabled="disabled" name="natire" id="change" value="F">&nbsp;&nbsp;&nbsp;Activity Change
-              										</div>
-              										<label class="col-sm-2"> Name of Area:</label>
-              										<div class="col-sm-4">
-              										  <input type="text" readonly="true" value="Exact Location of the business" class="form-control" name="location" id="location">
-              										  <span id="locationerr" class="text-danger"></span>
-              										</div>
+                										<div class="col-sm-4">
+                										  <input type="radio" disabled="disabled" name="natire" id="newId" value="M"> &nbsp;&nbsp;&nbsp;New&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                										  <input type="radio" disabled="disabled" name="natire" id="expension" value="F">&nbsp;&nbsp;&nbsp;Expansion &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                										  <input type="radio" disabled="disabled" name="natire" id="change" value="F">&nbsp;&nbsp;&nbsp;Activity Change
+                										</div>
               									  </div>
               									  <div class="form-group">
               										<label class="col-sm-2">Project Cost (In Nu).(excluding Working Capital) :</label>
@@ -461,17 +419,25 @@
               										  </select>
               										  <span id="vilagesectionerr" class="text-danger"></span>
               										</div>
-              										<div class="col-sm-6">
-              										  <label class="col-sm-8">Do you want your License through post ?<span class="text-danger">*</span></label>
-              										  <div class="col-sm-4">
-              											  <input type="radio" disabled="disabled" onclick="showpostaladdr('Y')" name="postaladdr" id="postaladdryId" value="Y"> &nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-              											<input type="radio" disabled="disabled" name="postaladdr" onclick="showpostaladdr('N')" id="postaladdrn" value="N">&nbsp;&nbsp;&nbsp;No
-              										  </div>
-              										  <div class="col-sm-12">
-              											<span id="postalselecterr" class="text-danger"></span>
-              										  </div>
-              										</div>
+                                  <label class="col-sm-2"> Name of Area:</label>
+                                  <div class="col-sm-4">
+                                    <input type="text" readonly="true" value="Exact Location of the business" class="form-control" name="location" id="location">
+                                    <span id="locationerr" class="text-danger"></span>
+                                  </div>
+              										
               									  </div>
+                                  <div class="form-group">
+                                    <div class="col-sm-6">
+                                      <label class="col-sm-8">Do you want your License through post ?<span class="text-danger">*</span></label>
+                                      <div class="col-sm-4">
+                                        <input type="radio" disabled="disabled" onclick="showpostaladdr('Y')" name="postaladdr" id="postaladdryId" value="Y"> &nbsp;&nbsp;&nbsp;Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                      <input type="radio" disabled="disabled" name="postaladdr" onclick="showpostaladdr('N')" id="postaladdrn" value="N">&nbsp;&nbsp;&nbsp;No
+                                      </div>
+                                      <div class="col-sm-12">
+                                      <span id="postalselecterr" class="text-danger"></span>
+                                      </div>
+                                    </div>
+                                  </div>
               									  <div class="form-group" id="postaladdid">
               										<label class="col-sm-12">
               										  Postal Address<span class="text-danger">*</span>
@@ -577,7 +543,7 @@
               								</div>
                               <hr />
                               <div class="form-group">
-                                <div class="col-sm-3 pull-right">
+                                <div class="col-sm-12">
                                 <button type="button" onclick="pretab('location')" class="btn btn-success">
                                       <i class="fa fa-arrow-left"></i>
                                       Previous
@@ -637,13 +603,13 @@
                                 </div>
                                 <hr />
                                 <div class="form-group">
-                                  <div class="col-sm-4 pull-right">
+                                  <div class="col-sm-12">
                                   <button type="button" onclick="pretab('attachment')" class="btn btn-success">
                                         <i class="fa fa-arrow-left"></i>
                                         Previous
                                       </button>
-                                      <a href="./acknowledgementapprove.html" class="btn btn-primary"><i class="fa fa-check"></i>
-                                        Approve</a>
+                                      <a href="./acknowDomesticAccpet.html" class="btn btn-primary"><i class="fa fa-check"></i>
+                                        Accept</a>
                                       <a href="#" onclick="rejectApplication()" class="btn btn-danger" type="button"><i class="fa fa-ban"></i>
                                         Reject</a>
                                   </div>
