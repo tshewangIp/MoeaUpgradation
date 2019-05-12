@@ -1,0 +1,472 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="Content-Language" content="en" />
+    <meta name="msapplication-TileColor" content="#2d89ef">
+    <meta name="theme-color" content="#4188c9">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <link rel="icon" href="./favicon.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" type="image/x-icon" href="./favicon.ico" />
+    <!-- Generated: 2018-04-16 09:29:05 +0200 -->
+    <title>G2C</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,400,400i,500,500i,600,600i,700,700i&amp;subset=latin-ext">
+    <script src="./assets/js/vendors/jquery-3.2.1.min.js"></script>
+    <script src="./assets/js/require.min.js"></script>
+    <script>
+      requirejs.config({
+          baseUrl: '.'
+      });
+    </script>
+    <link href="./assets/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Dashboard Core -->
+    <link href="./assets/css/dashboard.css" rel="stylesheet" />
+    <script src="./assets/js/dashboard.js"></script>
+    <!-- c3.js Charts Plugin -->
+    <link href="./assets/plugins/charts-c3/plugin.css" rel="stylesheet" />
+    <script src="./assets/plugins/charts-c3/plugin.js"></script>
+    <!-- Google Maps Plugin -->
+    <link href="./assets/plugins/maps-google/plugin.css" rel="stylesheet" />
+    <script src="./assets/plugins/maps-google/plugin.js"></script>
+    <!-- Input Mask Plugin -->
+    <script src="./assets/plugins/input-mask/plugin.js"></script>
+</head>
+
+  <div class="header py-4" style="background: #120f65;">
+    <div class="container">
+      <div class="d-flex">
+        <a class="header-brand" href="./index.html">
+          <img src="./assets/images/logo.png" class="header-brand-img" alt="tabler logo" style="height:60px;width:60px">
+        </a>
+
+        <h3 class="text-white"><br />Government to citizen service delivery initiative</h3>
+      </div>
+    </div>
+  </div>
+ <div class="header collapse d-lg-flex p-0" id="headerMenuCollapse">
+    <div class="container">
+      <div class="row pull-right">
+        <div class="col-lg order-lg-first">
+          <ul class="nav nav-tabs border-0 flex-column flex-lg-row">
+            <li class="nav-item" style="color:black">
+              <a href="javascript:void(0)" class="nav-link" data-toggle="dropdown"><i class="fe fe-edit"></i> Application <i class="fa fa-chevron-down"></i></a>
+              <div class="dropdown-menu dropdown-menu-arrow">
+                <a href="./domesticApplication.html" class="dropdown-item ">Application for Domestic Project Approval</a>
+                <a href="./fdiApplication.html" class="dropdown-item ">Application For FDI Project Registration and Final Approval</a>
+                <a href="./industryApplication.html" class="dropdown-item ">Application for Industry License</a>
+              </div>
+            </li>
+            <li class="nav-item ">
+              <a href="./trackApplication.html" class="nav-link" style="color:black"> <strong><i class="fe fe-search"></i>Track your application</strong></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+  <body class="">
+    <div class="my-3 my-md-5">
+      <div class="container">
+        <div class="row">
+          <span style="font-size: 20px"><b>&nbsp;&nbsp;&nbsp;&nbsp;Department of Industry</b> >> Application for FDI Project Approval </span> 
+          
+          <div class="col-12">
+            <form action="#" method="post" class="card form-horizontal">
+              <div class="card-body">
+                <span class="text-danger" >
+                    &nbsp;&nbsp;&nbsp;&nbsp;NOTE:  Label which are mark with * are mandatory fields, you cannot proceed further without those fields.
+                    Please follow the instruction in &nbsp;&nbsp;<img src="./assets/images/questionMark.jpg" class="user-image" width="20px">
+                </span>
+                <div class="row">
+                  	<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    	<div class="panel panel-default">
+                        	<div class="panel-body">
+                          		<div id="selectapplicationfor" >
+                            		<div class="form-group">
+                              			<label class="col-sm-12">
+                                			In order to get industry license for FDI project, you need to proceed with:<br />
+                                		</label>
+                                		<span class="col-sm-12">
+		                                  	1. Apply for Application for FDI Project Registration & Final Approval. You need to select FDI registration application from service below.<br />
+			                                2. Apply for business plan: After approval of your FDI registration application, then you need to proceed with final FDI business approval from the same link below.<br />
+			                                3. If your business plan is approved, then system will create application for industry license along with sms and email notification to you. Further action will be taken from RTIO for your license.
+		                                </span>
+	                            	</div>
+		                            <hr>
+		                            <div class="form-group">
+		                              <label class="col-sm-4">
+		                                Select Service:<span class="text-danger">*</span>
+		                              </label>
+		                              <div class="col-sm-4">
+		                                <select name="serviceselect" id="serviceselect" onchange="showfields()" class="form-control">
+		                                  <option value="">Select</option>
+		                                  <option value="1">FDI Project Registration</option>
+		                                  <option value="2">Final FDI business approval</option>
+		                                </select>
+		                                <span id="serviceselecterr" class="text-danger"></span>
+		                              </div>
+		                            </div>
+		                            <div id="applicationNuberField" style="display: none;">
+		                              <div class="form-group" >
+		                                <label class="col-sm-4">
+		                                  Application Number:
+		                                  <a href="#"  data-toggle="tooltip" data-placement="top" title='Please provide approved application number for domestic project registration.' class="tooltipCSSSelector">
+		                                    <img src="./assets/images/questionMark.jpg" class="user-image" id="instrumentCountryimg" width="20px">
+		                                    <i class='fa fa-spinner fa-spin'id="instrumentCountryspanid" style="display:none"></i>    
+		                                  </a>
+		                                  <span class="text-danger">*</span>
+		                                </label>
+		                                <div class="col-sm-4">
+		                                    <input type="number" class="form-control" id="cidNo" name="cidNo" placeholder="Application number Number" />
+		                                   <span id="ciderr" class="text-danger"></span>
+		                                </div>
+		                                <div class="col-sm-3">
+		                                  <button type="button" onclick="showbusinessplanfiormform()" class="btn btn-primary pull-right" >Next <i class="fa fa-arrow-right"></i></button>
+		                                </div>
+		                              </div>
+		                            </div>
+		                            <div id="selectownership" style="display: none;">
+		                              <!-- <div class="form-group">
+		                                <label class="col-sm-4">Choose service you wish to proposed:<span class="text-danger">*</span></label>
+		                                <div class="col-sm-4">
+		                                  <input type="radio" name="services" id="servicesp" value="P"> &nbsp;&nbsp;&nbsp;Production and Manufacturing&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		                                  <input type="radio" name="services" id="servicess" value="S">&nbsp;&nbsp;&nbsp;Services
+		                                </div>
+		                              </div> -->
+		                              <div class="form-group">
+		                                <label class="col-sm-4">Ownership type:<span class="text-danger">*</span></label>
+		                                <div class="col-sm-4">
+		                                  <select name="ownershiptype" id="ownershiptype" onchange="showownershipfields(this.value)" class="form-control">
+		                                    <option value="">Select</option>
+		                                    <option value="S">Sole Propritorship</option>
+		                                    <option value="P">Partnership</option>
+		                                    <option value="C">Company</option>
+		                                    <option value="O">Others</option>
+		                                  </select>
+		                                <span id="ownershiptypeerr" class="text-danger"></span>
+		                                </div>
+		                              </div>
+		                              <div class="form-group" style="display: none" id="cidsection">
+		                                <label class="col-sm-4">
+		                                  Cid No:
+		                                  <a href="#"  data-toggle="tooltip" data-placement="top" title='Please provide 11 digit cid number.' class="tooltipCSSSelector">
+		                                    <img src="./assets/images/questionMark.jpg" class="user-image" id="instrumentCountryimg" width="20px">
+		                                    <i class='fa fa-spinner fa-spin'id="instrumentCountryspanid" style="display:none"></i>    
+		                                  </a>
+		                                  <span class="text-danger">*</span>
+		                                </label>
+		                                <div class="col-sm-4">
+		                                    <input type="number" class="form-control" id="cidNo" name="cidNo" placeholder="Cid Number" />
+		                                   <span id="ciderr" class="text-danger"></span>
+		                                </div>
+		                                <div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" id="partneradd" style="display: none">
+		                                  <button class="btn btn-success pull-right" type="button" id="partneraddbtn"><i class="fa fa-plus"></i>Add More Partners</button>
+		                                </div>
+		                              </div>
+		                              <span id="addpartners"></span>
+		                              <div class="form-group" style="display: none" id="companysection">
+		                                <label class="col-sm-4">Enter Company's Registration Number:
+		                                  <a href="#"  data-toggle="tooltip" data-placement="top" title='Please enter your company registration number. You need get regsterted for you company if you dint registerted before' class="tooltipCSSSelector">
+		                                    <img src="./assets/images/questionMark.jpg" class="user-image" id="instrumentCountryimg" width="20px">
+		                                    <i class='fa fa-spinner fa-spin'id="instrumentCountryspanid" style="display:none"></i>    
+		                                  </a><span class="text-danger">*</span>
+		                                </label>
+		                                <div class="col-sm-4">
+		                                    <input type="number" class="form-control" onchange="fetchpersonalDetails(this.value)" id="compno" name="compno" placeholder="Company Reg. Number" />
+		                                   <span id="compnoerr" class="text-danger"></span>
+		                                </div>
+		                              </div>
+		                              <div class="form-group" style="display: none" id="proceedbtn">
+		                                <div class="col-sm-4">
+		                                  <button type="button" onclick="showform()" class="btn btn-primary" >Next <i class="fa fa-arrow-right"></i></button>
+		                                </div>
+		                              </div>
+		                            </div>
+		                          </div>
+
+		                            <div id="formdetals" style="display: none">
+			                            <div class="nav-tabs-custom">
+			                              	<ul class="nav nav-tabs">
+			                                	<li id="personalDetials">
+			                                  	<a href="#personal_tab" id="personalh" data-toggle="tab" data-placement="top" title='Please use buttons to change tabs.'><i class="fa fa-user"></i>&nbsp;Personal Details<span class="text-info" style="font-size: 20px" id="personalcheck"></span></a>
+				                                </li>
+				                            </ul>
+				                        </div>
+				                         <div class="tab-content">
+				                            <div class="tab-pane" id="personal_tab">
+				                              <br />
+				                              <div id="personalDetails1" style="display: none">
+				                               <div class="form-group">
+				                                <label class="col-sm-2">Full Name:</label>
+				                                <div class="col-sm-4">
+				                                   <input type="text" value="Tshewang Tenzin" readonly="true"class="form-control" name="name" id="name">
+				                                </div>
+				                                <label class="col-sm-2">Gender:</label>
+				                                <div class="col-sm-4">
+				                                    <input type="radio" disabled="true" name="gender" id="gendermaleid" value="M"> &nbsp;&nbsp;&nbsp;Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				                                  <input type="radio" disabled="true" name="gender" id="genderfemale" value="F">&nbsp;&nbsp;&nbsp;Fe Male
+				                                </div>
+				                              </div>
+				                              <div class="form-group">
+				                                <label class="col-sm-2">Dzongkhag:</label>
+				                                <div class="col-sm-4">
+				                                   <input type="text" value="Trashiyangtse" readonly="true"class="form-control" name="dzongkhang" id="dzongkhang">
+				                                </div>
+				                                <label class="col-sm-2">Gewog:</label>
+				                                <div class="col-sm-4">
+				                                   <input type="text" value="Tongzhang" readonly="true"class="form-control" name="gewog" id="gewog">
+				                                </div>
+				                              </div>
+				                              <div class="form-group">
+				                                <label class="col-sm-2">Village:</label>
+				                                <div class="col-sm-4">
+				                                   <input type="text" value="Wogkhar" readonly="true"class="form-control" name="village" id="village">
+				                                </div>
+				                                <label class="col-sm-2">Security Clearance:</label>
+				                                <div class="col-sm-4">
+				                                   <input type="text" value="123456789102" readonly="true"class="form-control" name="sccNo" id="sccNo">
+				                                </div>
+				                              </div>
+				                              <div class="form-group">
+				                                <label class="col-sm-2">Mobile Number:<a href="#"  data-toggle="tooltip" data-placement="top" title='Please provide your 8 digit bhutanese mobile number. system will use this number for your sms notification' class="tooltipCSSSelector">
+				                                    <img src="./assets/images/questionMark.jpg" class="user-image" id="instrumentCountryimg" width="20px">
+				                                  </a><span class="text-danger">*</span></label>
+				                                <div class="col-sm-4">
+				                                   <input type="number" class="form-control" name="mobile" id="mobile">
+				                                   <span id="mobileerr" class="text-danger"></span>
+				                                </div>
+				                                <label class="col-sm-2">Email:</label>
+				                                <div class="col-sm-4">
+				                                   <input type="text" class="form-control" name="gender">
+				                                </div>
+				                              </div>
+				                              <div class="form-group">
+				                                <label class="col-sm-2">Telephone Number:</label>
+				                                <div class="col-sm-4">
+				                                  <input type="number" class="form-control" name="name">
+				                                </div>
+				                              </div>
+				                             </div>
+				                              <div id="partner1" style="display:none;">
+				                                  <hr />
+				                                <div class="form-group">
+				                                <label class="col-sm-2">Full Name:</label>
+				                                <div class="col-sm-4">
+				                                   <input type="text" value="Tshewang Tenzin" readonly="true"class="form-control" name="name" id="name">
+				                                </div>
+				                                <label class="col-sm-2">Gender:</label>
+				                                <div class="col-sm-4">
+				                                    <input type="radio" disabled="true" checked="true" name="gender" id="gendermale1" value="M"> &nbsp;&nbsp;&nbsp;Male&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				                                  <input type="radio" disabled="true" name="gender" id="genderfemale" value="F">&nbsp;&nbsp;&nbsp;Fe Male
+				                                </div>
+				                              </div>
+				                              <div class="form-group">
+				                                <label class="col-sm-2">Dzongkhag:</label>
+				                                <div class="col-sm-4">
+				                                   <input type="text" value="Trashiyangtse" readonly="true"class="form-control" name="dzongkhang" id="dzongkhang">
+				                                </div>
+				                                <label class="col-sm-2">Gewog:</label>
+				                                <div class="col-sm-4">
+				                                   <input type="text" value="Tongzhang" readonly="true"class="form-control" name="gewog" id="gewog">
+				                                </div>
+				                              </div>
+				                              <div class="form-group">
+				                                <label class="col-sm-2">Village:</label>
+				                                <div class="col-sm-4">
+				                                   <input type="text" value="Wogkhar" readonly="true"class="form-control" name="village" id="village">
+				                                </div>
+				                                <label class="col-sm-2">Security Clearance:</label>
+				                                <div class="col-sm-4">
+				                                   <input type="text" value="123456789102" readonly="true"class="form-control" name="sccNo" id="sccNo">
+				                                </div>
+				                              </div>
+				                              <div class="form-group">
+				                                <label class="col-sm-2">Mobile Number:<a href="#"  data-toggle="tooltip" data-placement="top" title='Please provide your 8 digit bhutanese mobile number. system will use this number for your sms notification' class="tooltipCSSSelector">
+				                                    <img src="./assets/images/questionMark.jpg" class="user-image" id="instrumentCountryimg" width="20px">
+				                                  </a><span class="text-danger">*</span></label>
+				                                <div class="col-sm-4">
+				                                   <input type="number" class="form-control" name="mobile" id="mobile">
+				                                   <span id="mobileerr" class="text-danger"></span>
+				                                </div>
+				                                <label class="col-sm-2">Email:</label>
+				                                <div class="col-sm-4">
+				                                   <input type="text" class="form-control" name="gender">
+				                                </div>
+				                              </div>
+				                              <div class="form-group">
+				                                <label class="col-sm-2">Telephone Number:</label>
+				                                <div class="col-sm-4">
+				                                  <input type="number" class="form-control" name="name">
+				                                </div>
+				                              </div>
+				                              </div>
+				                              <div id="companydetails" style="display:none;">
+				                                <div class="form-group">
+				                                  <label class="col-sm-2">Comp Reg Number:</label>
+				                                  <div class="col-sm-4">
+				                                     <input type="text" readonly="true" value="12345678123" class="form-control" name="dzongkhang" id="dzongkhang">
+				                                  </div>
+				                                  <label class="col-sm-2">Company Name:</label>
+				                                  <div class="col-sm-4">
+				                                     <input type="text" readonly="true" value="Name of the proposed company" class="form-control" name="gewog" id="gewog">
+				                                  </div>
+				                                </div>
+				                                <div class="form-group">
+				                                  <label class="col-sm-2">Company Type:</label>
+				                                  <div class="col-sm-4">
+				                                     <input type="radio" name="gender" id="gendermaless" value="M"> &nbsp;&nbsp;&nbsp;Government&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				                                  <input type="radio" name="gender" id="genderfemale" value="F">&nbsp;&nbsp;&nbsp;Coorporation&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				                                  <input type="radio" name="gender" id="genderfemale" value="F">&nbsp;&nbsp;&nbsp;Private
+				                                  </div>
+				                                  <label class="col-sm-2">Mobile Number:</label>
+				                                  <div class="col-sm-4">
+				                                     <input type="text" class="form-control" name="gewog" id="gewog">
+				                                  </div>
+				                                </div>
+				                                <div class="form-group">
+				                                  <label class="col-sm-2">Email Id:</label>
+				                                  <div class="col-sm-4">
+				                                     <input type="text" class="form-control" name="gewog" id="gewog">
+				                                  </div>
+				                                  <label class="col-sm-2">Telepho No:</label>
+				                                  <div class="col-sm-4">
+				                                     <input type="text" class="form-control" name="gewog" id="gewog">
+				                                  </div>
+				                                </div>
+				                              </div>
+				                              <div id="otherdetails" style="display:none;">
+				                                <div class="form-group">
+				                                  <label class="col-sm-2">Agency Name:</label>
+				                                  <div class="col-sm-4">
+				                                     <input type="text" class="form-control" name="dzongkhang" id="dzongkhang">
+				                                  </div>
+				                                  <label class="col-sm-2">Agency Address:</label>
+				                                  <div class="col-sm-4">
+				                                     <textarea class="form-control" name="agencyaddr"></textarea>
+				                                  </div>
+				                                </div>
+				                                <div class="form-group">
+				                                  <label class="col-sm-2">Mobile No:</label>
+				                                  <div class="col-sm-4">
+				                                     <input type="text" class="form-control" name="gewog" id="gewog">
+				                                  </div>
+				                                  <label class="col-sm-2">Telephone Number:</label>
+				                                  <div class="col-sm-4">
+				                                     <input type="text" class="form-control" name="gewog" id="gewog">
+				                                  </div>
+				                                </div>
+				                                <div class="form-group">
+				                                  <label class="col-sm-2">Email Id:</label>
+				                                  <div class="col-sm-4">
+				                                     <input type="text" class="form-control" name="gewog" id="gewog">
+				                                  </div>
+				                                </div>
+				                              </div>
+				                              <hr />
+				                              <div class="form-group pull-right">
+				                                <div class="col-sm-4">
+				                                  <button type="button" onclick="next('personal')" class="btn btn-primary">
+				                                    <i class="fa fa-arrow-right"></i>
+				                                    Next
+				                                  </button>
+				                                </div>
+				                              </div>
+				                            </div>
+				                        </div>
+				                    </div>
+		                        </div>
+		                    </div>
+		                </div>
+		            </div>
+		        </div>
+		    </div>
+		</form>
+	</div>
+</div>
+</div>
+</div>
+</body>
+<script type="text/javascript">
+  function showfields(){
+    $('#applicationNuberField').hide();
+    $('#selectownership').hide();
+    if($('#serviceselect').val()=="1"){
+      $('#selectownership').show();
+    }
+    else if($('#serviceselect').val()=="2"){
+      $('#applicationNuberField').show();
+    }
+    else{
+      $('#serviceselecterr').html('Please select service you wish to apply');
+      //$('#selectownership').hide();
+    }
+  }
+  function showownershipfields(val){
+    inipartnercount=1;
+    $('#addpartners').html('');
+    $('#ownershiptypeerr').html('');
+    $('#companysection').hide();
+    $('#cidsection').hide();
+    $('#partneradd').hide();
+    $('#proceedbtn').show();
+    if(val=="S" || val=="P"){
+      $('#cidsection').show();
+      if(val=="P"){
+        $('#partneradd').show();
+      }
+    }
+    else if(val=="C"){
+      $('#companysection').show();
+    }
+    else if(val==""){
+      $('#cidsection').hide();
+      $('#proceedbtn').hide();
+      $('#ownershiptypeerr').html('Please select ownership type');
+    }
+  }
+  var inipartnercount=1;
+  $('#partneraddbtn').click(function(){
+    inipartnercount++;
+    $('#addpartners').append('<div class="form-group" id="addedpartner'+inipartnercount+'"><div class="col-xs-12 col-sm-4 col-md-4 col-lg-4"></div><div class="col-xs-10 col-sm-4 col-md-4 col-lg-4"><input type="number" placeholder="11 digit bhutanese cid" name="cid" maxlength="11" id="cid'+inipartnercount+'" class="form-control"></div><div class="col-xs-2 col-sm-2 col-md-2 col-lg-2"><button class="btn btn-danger" type="button" onclick="deletethiscid('+inipartnercount+')"><i class="fa fa-times"></i>Delete</button></div></div>');
+  });
+  function deletethiscid(cuont){
+    $('#addedpartner'+cuont).remove();
+   }
+   function showform(){
+    if(validatefirst()){
+      $('#gendermaleid').prop("checked",true);
+      $('#formdetals').show();
+      $('#selectapplicationfor').hide();
+      if($('#ownershiptype').val()=="S" || $('#ownershiptype').val()=="P"){
+        $('#personalDetails1').show();
+      }
+      if($('#ownershiptype').val()=="P"){
+        $('#partner1').show();
+      }
+      if($('#ownershiptype').val()=="O"){
+        $('#otherdetails').show();
+      }
+      if($('#ownershiptype').val()=="C"){
+        $('#companydetails').show();
+      }
+    }
+   }
+   function validatefirst(){
+    var ret=true;
+    if(($('#ownershiptype').val()=="S" || $('#ownershiptype').val()=="P") && $('#cidNo').val()==""){
+      $('#ciderr').html('please enter cid No');
+      ret=false;
+    }
+    if($('#ownershiptype').val()=="C" && $('#compno').val()==""){
+      $('#compnoerr').html('please enter company registration number');
+      ret=false;
+    }
+    return ret;
+   }
+</script>''
